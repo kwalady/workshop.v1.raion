@@ -53,7 +53,8 @@ class PostController extends Controller
        try {
          $post = Post::find($request->input('id'));
 
-         // TODO etch comments associated with this post
+         // fetch comments associated with this post
+         $post->comments = Comment::where('post_id', $request->input('id'));
        }
        catch (\Exception $e) {
          return response()->json([
