@@ -6,7 +6,6 @@ use App\Comment;
 use App\Post;
 use App\Http\Requests\PostCreateRequest;
 use App\Http\Requests\PostFetchRequest;
-use App\Http\Requests\PostFetchAllRequest;
 use App\Http\Requests\PostUpdateRequest;
 use App\Http\Requests\PostDeleteRequest;
 use App\Http\Controllers\Controller;
@@ -72,11 +71,9 @@ class PostController extends Controller
     /**
      * Fetch all posts
      *
-     * @param App\Http\Requests\PostFetchAllRequest $request
-     *
      * @return \Illuminate\Http\JsonResponse
      **/
-     public function fetchAll(PostFetchAllRequest $request) {
+     public function fetchAll() {
        try {
          $posts = Post::all();
        }
