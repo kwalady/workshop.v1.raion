@@ -25,8 +25,7 @@ class PostController extends Controller
          Post::create([
            'image'        => $request->file('image')->store('public/images'),
            'author'       => $request->input('author'),
-           'description'  => $request->input('description'),
-           'likes'        => ''
+           'description'  => $request->input('description')
          ]);
        }
        catch (\Exception $e) {
